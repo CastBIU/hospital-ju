@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span v-for="(item, index) in numStr" :key="index" class="num light-blue" :style="{fontSize: `${fontSize}px`}">{{item}}</span>
+    <span v-for="(item, index) in numStr" :key="index" class="num" :class="{'light-blue': color}" :style="{fontSize: `${fontSize}px`}">{{item}}</span>
   </div>
 </template>
 <script>
@@ -14,6 +14,10 @@ export default {
     fontSize: {
       type: Number,
       default: 30
+    },
+    color: {
+      type: Boolean,
+      default: false
     }
   },
   data() {

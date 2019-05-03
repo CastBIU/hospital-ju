@@ -42,12 +42,14 @@ export default {
   flex-flow: row nowrap;
   padding: 0 30px;
   text-align: start;
+  color: #e6e8f8;
   .left {
     margin-right: 10px;
   }
   .tem {
     font-size: 32px;
     margin-right: 10px;
+    color: #fff;
   }
   .inner {
     text-align: center;
@@ -56,8 +58,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 0px 0px 20px rgba(42, 44, 119, 0.5) inset;
     .inner-title {
       font-size: 18px;
+      // background: linear-gradient(to top, #ffba31, #FFD392, #FDF7EE);
+      // -webkit-background-clip: text;
+      // color: transparent;
     }
     .inner-box-item {
       text-align: start;
@@ -68,6 +74,7 @@ export default {
       }
       .inner-box-content {
         font-size: 20px;
+        color: #fff;
       }
     }
   }

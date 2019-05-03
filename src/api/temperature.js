@@ -19,8 +19,8 @@ export function getWeather (url, params) {
         tempRange: `${item.tem1.replace('℃', '')}~${item.tem2}`,
         win: `${item.win ? item.win[0] : ''}${item.win_speed}`,
         inner: [
-          {title: '温度', content: item.humidity},
-          {title: '湿度', content: '23℃'}
+          {title: '温度', content: '23.5℃'},
+          {title: '湿度', content: `${item.humidity}%`}
         ]
       }
     })[0]

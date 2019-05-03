@@ -4,7 +4,7 @@
       <span><span class="first light-blue">近七日能耗成本</span><span class="cost">能耗成本</span><span class="up">增长率</span></span>
     </div>
     <div class="charts">
-    <div id="chart" style="min-height: 350px;margin-left:15px;"></div>
+    <div id="chart" style="min-height: 250px;"></div>
     </div>
   </div>
 </template>
@@ -34,7 +34,10 @@ export default {
       }
     },
     grid: {
-      left: '15%'
+      left: '15%',
+      right: '15%',
+      bottom: '15%',
+      top: '15%',
     },
     xAxis: [
       {
@@ -85,15 +88,44 @@ export default {
     ],
     series: [
       {
-        name:'蒸发量',
+        name:'能耗成本',
         type:'bar',
-        data:[1, 2, 3, 4, 9, 11, 13]
+        data:[1, 2, 3, 4, 9, 11, 13],
+        barWidth: 12,
+        itemStyle: {
+          // //柱形图圆角，鼠标移上去效果，如果只是一个数字则说明四个参数全部设置为那么多
+          emphasis: {
+            color: '#2effab' 
+          },
+          normal: {
+            //柱形图圆角，初始化效果
+            barBorderRadius:[20, 20, 0, 0],
+            color: new echarts.graphic.LinearGradient(
+                0, 0, 0, 1,
+                [
+                  {offset: 0, color: '#2effab'},
+                  {offset: 0.7, color: '#2cad89'},
+                  {offset: 1, color: 'transparent'}
+                ]
+            )
+          }
+        },
       },
       {
-        name:'平均温度',
+        name:'增长率',
         type:'line',
         yAxisIndex: 1,
-        data:[25, 30, 45, 60, 105, 120, 140]
+        symbolSize: 10,   //设定实心点的大小
+        data:[25, 30, 45, 60, 105, 120, 140],
+        itemStyle: {
+          normal: {
+            color: '#1cffff'
+          },
+          emphasis: {
+            color: '#1cffff',
+            symbolSize: 10,
+          },
+        },
       }
     ]
   })
@@ -104,6 +136,7 @@ export default {
 <style lang="scss" scoped>
 .energy {
   border: 1px solid #292b76;
+  box-shadow: 0px 0px 120px rgba(42, 44, 119, 0.5) inset;
 }
 .title {
   background-color: #292b76;
@@ -118,6 +151,8 @@ export default {
   position: relative;
   padding-left: 25px;
   padding-right: 10px;
+  font-size: 12px;
+  color: #e6e8f8;
   &::after {
     position: absolute;
     left: 0;
@@ -133,6 +168,8 @@ export default {
 .up {
   position: relative;
   padding-left: 15px;
+  font-size: 12px;
+  color: #e6e8f8;
   &::after {
     position: absolute;
     left: 0;

@@ -62,16 +62,21 @@ export default {
     left: 0;
     top: 50px;
     padding: 10px;
-    border: 1px solid #292b76;
+    border: 1px solid rgba(255, 255, 255, 0.15);
     z-index: 1;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.15) inset;
     .title {
-      border-bottom: 1px solid #f2f2f2;
-      margin-bottom: 10px;
+      border-bottom: 1px solid #292b76;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      font-size: 14px;
     }
     .item {
       display: flex;
       flex-direction: column;
+      font-size: 12px;
       div {
+        margin-bottom: 8px;
         text-align: start;
         .where {
           color: #165ca4;
@@ -81,26 +86,26 @@ export default {
   }
   .hospital {
     position: relative;
-    padding-left: 100px;
+    padding-left: 80px;
     img {
-      width: 400px;
+      width: 500px;
     }
     .live-box {
       position: absolute;
-      background-color: #3b42a0;
+      background-color: rgba(42, 44, 119, 0.8);
       text-align: start;
-      padding: 3px 0;
+      padding: 3px 0 0;
       &.menzhen {
-        left: 150px;
+        left: 220px;
         top: 50px;
       }
       &.zhuyuan {
-        left: 250px;
+        left: 350px;
         top: 10px;
       }
       &.xingzheng {
-        left: 350px;
-        top: 30px;
+        left: 400px;
+        top: 70px;
       }
       .title {
         font-size: 12px;
@@ -114,11 +119,26 @@ export default {
         }
       }
       .building {
+        position: relative;
         background-color: #fff;
         border-radius: 20px;
         color: #333;
         padding: 3px;
-        font-size: 14px;
+        text-align: center;
+        font-size: 12px;
+        box-shadow: 0px 10px 10px rgba(40, 239, 255, 0.5);
+        &::after {
+          position: absolute;
+          left: 50%;
+          bottom: -5px;
+          transform: translateX(-50%);
+          content: '';
+          width: 0;
+          height: 0;
+          border-width:5px 5px 0;
+          border-style:solid;
+          border-color:#fff transparent transparent;
+        }
       }
     }
   }

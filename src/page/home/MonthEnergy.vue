@@ -11,7 +11,7 @@
         <div class="item" v-for="(item, index) in items" :key="index">
           <span>{{item.name}}</span>
           <span>{{item.num}}</span>
-          <span>{{item.price}}</span>
+          <span class="light-blue">{{item.price}}</span>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@ export default {
 <style lang="scss" scoped>
 .title-first {
   background-color: #252868;
-  padding: 5px;
+  padding: 8px 5px;
   padding-left: 30px;
   font-size: 12px;
   text-align: start;
@@ -70,7 +70,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 5px;
+  padding: 5px 10px;
   .title {
     color: #165ca4;
     font-size: 12px;
@@ -85,13 +85,16 @@ export default {
   }
 }
 .detail-box {
-  border: 1px solid #1e2159;
+  border: 4px solid #1e2159;
+  border-radius: 5px;
   padding: 5px;
+  padding-bottom: 20px;
+  font-size: 12px;
   .item {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 8px 10px;
     span {
       width: 120px;
       text-align: start;

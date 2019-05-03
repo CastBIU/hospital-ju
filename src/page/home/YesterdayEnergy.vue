@@ -5,14 +5,14 @@
     <div class="detail">
       <div class="part top">
         <div class="item">
-          <numBox num='34'/>
+          <numBox num='34' :color='true'/>
           <div class="right">
             <div class="title light-blue">总能耗</div>
             <div class="unit light-blue">J</div>
           </div>
         </div>
         <div class="item">
-          <numBox num='39'/>
+          <numBox num='39' :color='true'/>
           <div class="right">
             <div class="title light-blue">总电耗</div>
             <div class="unit light-blue">KWH</div>
@@ -81,10 +81,36 @@ export default {
     font-size: 12px;
     color: #999;
     margin-top: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 30px rgba(42, 44, 119, 0.5);
   }
   .detail {
+    position: relative;
     border: 1px solid #292b76;
     width: 500px;
+    box-shadow: 0px 0px 160px rgba(42, 44, 119, 0.8) inset, -5px 10px 10px rgba(42, 44, 119, 0.5);
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content:'';
+      width: 20px;
+      height: 20px;
+      border-left: 2px solid #44feff;
+      border-bottom: 2px solid #44feff;
+      border-radius: 2px;
+    }
+    &::before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      content:'';
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid #44feff;
+      border-top: 2px solid #44feff;
+      border-radius: 2px;
+    }
     .part {
       display: flex;
       align-items: center;
@@ -113,7 +139,7 @@ export default {
           text-align: start;
         }
         .item-title {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
           font-size: 14px;
         }
       }

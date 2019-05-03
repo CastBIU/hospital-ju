@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="title-first light-blue"><span>2017年11月能耗</span><span style='color:#999;'>{{date}}</span></div>
+    <div class="title-first light-blue"><span>昨日部门电耗</span><span style='color:#999;'>{{date}}</span></div>
     <div class="box">
       <div class="title-box">
-        <div class="title">能耗种类</div>
-        <div class="title">消耗量</div>
-        <div class="title">费用</div>
+        <div class="title">部门名称</div>
+        <div class="title">建筑面积</div>
+        <div class="title">耗电量</div>
       </div>
       <div class="detail-box">
         <div class="item" v-for="(item, index) in items" :key="index">
           <span>{{item.name}}</span>
           <span>{{item.num}}</span>
-          <span>{{item.price}}</span>
+          <span class="light-blue">{{item.price}}</span>
         </div>
       </div>
     </div>
@@ -25,34 +25,34 @@ export default {
       date: '',
       items: [
         {
-          name: '电',
-          num: '231KWH',
-          price: '264元',
+          name: '骨科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
         {
-          name: '水',
-          num: '131吨',
-          price: '264元',
+          name: '内科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
         {
-          name: '天然气',
-          num: '234m³',
-          price: '264元',
+          name: '眼科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
         {
-          name: '汽油',
-          num: '256升',
-          price: '264元',
+          name: '儿科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
         {
-          name: '柴油',
-          num: '356升',
-          price: '264元',
+          name: '外科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
         {
-          name: '液化石油气',
-          num: '113m³',
-          price: '264元',
+          name: '外科门诊',
+          num: '13m³',
+          price: '26 KWH',
         },
       ]
     }
@@ -67,7 +67,7 @@ export default {
   display: flex;
   justify-content: space-between;
   background-color: #252868;
-  padding: 5px;
+  padding: 8px 5px;
   padding-left: 30px;
   font-size: 12px;
   text-align: start;
@@ -77,7 +77,7 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: row;
-  padding: 5px;
+  padding: 5px 10px;
   .title {
     color: #165ca4;
     font-size: 12px;
@@ -92,13 +92,16 @@ export default {
   }
 }
 .detail-box {
-  border: 1px solid #1e2159;
+  border: 4px solid #1e2159;
+  border-radius: 5px;
   padding: 5px;
+  padding-bottom: 20px;
+  font-size: 12px;
   .item {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 8px 10px;
     span {
       width: 120px;
       text-align: start;

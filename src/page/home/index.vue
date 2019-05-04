@@ -12,18 +12,18 @@
       </div>
     </div>
     <div class="column">
-      <div class="box">
+      <div class="box" style="margin: 30px 0;">
         <YesterdayEnergy />
       </div>
-      <div class="box">
+      <div class="box" style="margin: 30px 0;">
         <HospitalView />
       </div>
     </div>
     <div class="column">
-      <div class="box">
+      <div class="box" style="margin: 50px 0;">
         <MonthEnergy />
       </div>
-      <div class="box">
+      <div class="box" style="margin: 50px 0;">
         <MonthEnergyList />
       </div>
     </div>
@@ -53,8 +53,8 @@ export default {
 .wrapper {
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   justify-content: space-between;
   background-color: #10102f;
   color: #fff;
@@ -69,6 +69,10 @@ export default {
     }
     .box {
       flex-shrink: 0;
+      margin-bottom: 30px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }
